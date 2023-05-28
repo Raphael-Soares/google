@@ -8,31 +8,27 @@ import SearchHeaderOptions from "./SearchHeaderOptions";
 
 export default function SearchHeader() {
     return (
-        <header className="sticky top-0 w-full">
-            <div className="flex flex-row w-full p-6 items-center justify-between">
-                <Link href="">
+        <header className="sticky top-0 bg-white">
+            <div className="flex w-full p-6 items-center justify-between">
+                <Link href={"/"}>
                     <Image
-                        width={120}
-                        height={40}
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png"
+                        width="120"
+                        height="40"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/640px-Google_2015_logo.svg.png"
                     />
                 </Link>
-
                 <div className="flex-1">
                     <SearchBox />
                 </div>
-
-                <div className="md:inline-flex hidden space-x-2 ">
+                <div className="hidden md:inline-flex space-x-2 ">
                     <RiSettings3Line className="header-icon" />
                     <TbGridDots className="header-icon" />
                 </div>
-                <button className="ml-2 px-6 py-2 font-md rounded-md hover:brightness-105 hover:shadow-md transition-all bg-blue-500 text-white">
+                <button className="bg-blue-500 text-white px-6 py-2 font-medium rounded-md hover:brightness-105 hover:shadow-md transition-all ml-2">
                     Sign in
                 </button>
             </div>
-            <div className="">
-                <SearchHeaderOptions />
-            </div>
+            <SearchHeaderOptions />
         </header>
     );
 }
