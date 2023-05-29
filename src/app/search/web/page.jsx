@@ -1,3 +1,4 @@
+import WebSearchResults from "@/components/WebSearchResults";
 import Link from "next/link";
 import React from "react";
 const API_KEY = process.env.GOOGLE_API_KEY;
@@ -13,7 +14,7 @@ export default async function page({ searchParams }) {
 
     const data = await response.json();
 
-    const results = data.items;
+    const results = data;
 
     if (!results) {
         return (
@@ -28,5 +29,5 @@ export default async function page({ searchParams }) {
             </div>
         );
     }
-    return <div>{results && results.map((result) => <h1>{result.title}</h1>)}</div>;
+    return <div>{results && <WebSearchResults results={results} />}</div>;
 }
