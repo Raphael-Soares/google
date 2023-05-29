@@ -14,7 +14,7 @@ export default function SearchHeaderOptions() {
     const searchTerm = searchParams.get("searchTerm");
 
     function selectTab(tab) {
-        router.push(`/search/${tab === "images" ? "image" : "web"}?searchTerm=hello`);
+        router.push(`/search/${tab === "images" ? "image" : "web"}?searchTerm=${searchTerm}`);
     }
     return (
         <div className="flex space-x-2 select-none border-b w-full justify-center lg:justify-start lg:pl-52 tex-gray-700 text-sm">
