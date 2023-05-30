@@ -1,3 +1,4 @@
+import PaginationButtons from "@/components/PaginationButtons";
 import SearchHeader from "@/components/SearchHeader";
 
 export const metadata = {

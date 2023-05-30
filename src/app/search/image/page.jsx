@@ -3,9 +3,10 @@ import Link from "next/link";
 import React from "react";
 const API_KEY = process.env.GOOGLE_API_KEY;
 const CONTEXT = process.env.GOOGLE_CONTEXT_KEY;
-export default async function I({ searchParams }) {
+export default async function page({ searchParams }) {
+    const startIndex = searchParams.start || 1;
     const response = await fetch(
-        `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${CONTEXT}&q=${searchParams.searchTerm}&searchType=image `
+        `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${CONTEXT}&q=${searchParams.searchTerm}&searchType=image&start=${startIndex} `
     );
 
     if (response.status !== 200) {
